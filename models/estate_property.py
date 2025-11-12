@@ -242,16 +242,21 @@ class EstatePropertyOffer(models.Model):
 
     def action_accept(self):
         for offer in self:
-            offer.state= 'accepted'
-            offer.property_id.selling_price = offer.price
-            offer.property_id.state = 'offer_accepted'
-            # Refuse other offers
+            min_price = offer.property_id.expected_price * 0.9
+            if offer.price < min_price:
+                raise ValidationError(_("The selling price can't be lower than 90% of the expected price."))
+
+            offer.property_id.write({
+                'selling_price': offer.price,
+                'buyer_id': offer.partner_id.id,
+                'state': 'offer_accepted'
+            })
+
             other_offers = self.search([
                 ('property_id', '=', offer.property_id.id),
                 ('id', '!=', offer.id)
             ])
             other_offers.write({'state': 'refused'})
-        return True
 
     def action_refuse(self):
         self.write({'state': 'refused'})

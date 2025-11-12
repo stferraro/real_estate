@@ -6,7 +6,7 @@
             <field name="name">view.estate.property.offer.list</field>
             <field name="model">estate.property.offer</field>
             <field name="arch" type="xml">
-                <list string="ModelTitle">
+                <list>
                     <field name="price"/>
                     <field name="state"/>
                     <field name="partner_id"/>
