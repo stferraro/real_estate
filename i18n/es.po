@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-11 22:43+0000\n"
-"PO-Revision-Date: 2025-11-11 20:22-0400\n"
+"POT-Creation-Date: 2025-11-15 23:48+0000\n"
+"PO-Revision-Date: 2025-11-15 19:58-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -208,7 +208,7 @@ msgstr "Ultimo precio de venta de la propiedad"
 #: model:ir.model.fields,field_description:real_estate.field_estate_property__garage
 #: model_terms:ir.ui.view,arch_db:real_estate.view_estate_property_search
 msgid "Garage"
-msgstr "Garage"
+msgstr "Garaje"
 
 #. module: real_estate
 #: model:ir.model.fields,field_description:real_estate.field_estate_property__garden
@@ -250,7 +250,6 @@ msgstr "La etiqueta esta activa?"
 #: model:ir.model.fields,field_description:real_estate.field_estate_property_offer__write_uid
 #: model:ir.model.fields,field_description:real_estate.field_estate_property_tags__write_uid
 #: model:ir.model.fields,field_description:real_estate.field_estate_property_type__write_uid
-#, fuzzy
 msgid "Last Updated by"
 msgstr "Última actualización el"
 
@@ -484,7 +483,7 @@ msgstr "Vendida"
 #. module: real_estate
 #: model:ir.model.fields.selection,name:real_estate.selection__estate_property__garden_orientation__south
 msgid "South"
-msgstr "Sus"
+msgstr "Sur"
 
 #. module: real_estate
 #: model:ir.model.fields,field_description:real_estate.field_estate_property__state
@@ -583,12 +582,6 @@ msgid "The selling price cannot exceed the expected price."
 msgstr "El precio de venta no puede superar el precio esperado."
 
 #. module: real_estate
-#. odoo-python
-#: code:addons/real_estate/models/estate_property.py:0
-msgid "The selling price must be 0 if there are no offers."
-msgstr "El precio de venta debe ser 0 si no hay ofertas."
-
-#. module: real_estate
 #: model:ir.model.constraint,message:real_estate.constraint_estate_property_selling_price_positive
 msgid "The selling price must be non-negative."
 msgstr "El precio de venta no puede ser negativo."
@@ -607,7 +600,9 @@ msgstr "El tipo de propiedad"
 #. module: real_estate
 #: model_terms:ir.actions.act_window,help:real_estate.action_estate_property_type
 msgid "There is no examples click here to add new Estate Property Type."
-msgstr "No hay ejemplos. Haga clic aquí para agregar un nuevo tipo de propiedad inmobiliaria."
+msgstr ""
+"No hay ejemplos. Haga clic aquí para agregar un nuevo tipo de propiedad "
+"inmobiliaria."
 
 #. module: real_estate
 #: model:ir.model.fields,field_description:real_estate.field_estate_property__total_area

@@ -153,6 +153,7 @@ class EstateProperty(models.Model):
         for record in self:
             if record.offers_ids:
                 record.best_offer = max(record.offers_ids.mapped('price'))
+                record.selling_price = record.best_offer
             else:
                 record.best_offer = 0.0
 
@@ -167,16 +168,6 @@ class EstateProperty(models.Model):
             raise UserError("Sold properties cannot be canceled.")
         self.write({'state': 'canceled'})
         return True
-
-    @api.constrains('selling_price', 'expected_price', 'offers_ids')
-    def _check_selling_price(self):
-        for rec in self:
-            if len(rec.offers_ids) > 1:
-                if float_compare(
-                        rec.selling_price, rec.expected_price * 0.9, precision_digits=2) == -1:
-                    raise ValidationError(_("The selling price can't be lower than 90% of the expected price."))
-            elif len(rec.offers_ids) == 0 and rec.selling_price != 0:
-                raise ValidationError(_("The selling price must be 0 if there are no offers."))
 
     @api.ondelete(at_uninstall=False)
     def _unlink_if_new_or_canceled(self):
