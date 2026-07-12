@@ -6,36 +6,36 @@
             sequence="10"
             web_icon="real_estate,static/description/icon.png"/>
 
-    <menuitem 
-        id="estate_menu_main" 
-        name="Advertisements" 
-        parent="real_estate_menu_root" 
+    <menuitem
+        id="estate_menu_main"
+        name="Advertisements"
+        parent="real_estate_menu_root"
         sequence="20"/>
 
-    <menuitem 
-        id="settings_menu" 
-        name="Settings" 
-        parent="real_estate_menu_root" 
+    <menuitem
+        id="settings_menu"
+        name="Settings"
+        parent="real_estate_menu_root"
         sequence="30"/>
 
-    <menuitem 
-        id="estate_property_menu_action" 
-        name="Properties" 
-        parent="estate_menu_main" 
+    <menuitem
+        id="estate_property_menu_action"
+        name="Properties"
+        parent="estate_menu_main"
         action="action_estate_property"
         sequence="10"/>
 
-    <menuitem 
-        id="estate_property_type_menu_action" 
-        name="Property Types" 
-        parent="settings_menu" 
+    <menuitem
+        id="estate_property_type_menu_action"
+        name="Property Types"
+        parent="settings_menu"
         action="action_estate_property_type"
         sequence="10"/>
 
-    <menuitem 
-        id="estate_property_tags_menu_action" 
-        name="Property Tags" 
-        parent="settings_menu" 
+    <menuitem
+        id="estate_property_tags_menu_action"
+        name="Property Tags"
+        parent="settings_menu"
         action="action_estate_property_tags"
         sequence="20"/>
 
