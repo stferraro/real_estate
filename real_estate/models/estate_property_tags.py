@@ -15,4 +15,7 @@ class EstatePropertyTags(models.Model):
 
     active = fields.Boolean(default=True, help="Is the tag active?")
 
-    _sql_constraints = [("name_unique", "unique(name)", "The tag name must be unique.")]
+    _name_unique = models.Constraint(
+        "unique(name)",
+        "The tag name must be unique.",
+    )
