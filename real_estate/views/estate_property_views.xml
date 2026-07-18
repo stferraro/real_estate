@@ -29,19 +29,8 @@
         <field name="arch" type="xml">
             <form string="Estate Property">
                 <header>
-                    <button
-                            name="action_sold"
-                            string="Mark as Sold"
-                            type="object"
-                            class="btn-primary"
-                            invisible="state != 'offer_accepted'"
-                    />
-                    <button
-                            name="action_cancel"
-                            string="Cancel"
-                            type="object"
-                            invisible="state == 'sold' or state == 'canceled'"
-                    />
+                    <button name="action_sold" string="Mark as Sold" type="object" class="btn-primary" invisible="state != 'offer_accepted'"/>
+                    <button name="action_cancel" string="Cancel" type="object" invisible="state == 'sold' or state == 'canceled'"/>
                     <field name="state" widget="statusbar" statusbar_visible="new, offer_received, offer_accepted, sold"/>
                 </header>
                 <sheet>
@@ -119,7 +108,7 @@
                 <filter string="No Garden" name="no_garden" domain="[('garden', '=', False)]"/>
                 <filter string="Available" name="available" domain="[('state', '=', 'available')]"/>
                 <filter string="Archive" name="active" domain="[('active', '=', False)]"/>
-                <group expand="1" string="Group By">
+                <group>
                     <filter string="Garden Orientation" name="grp_orientation" context="{'group_by': 'garden_orientation'}"/>
                     <filter string="Bedrooms" name="grp_bedrooms" context="{'group_by': 'bedrooms'}"/>
                     <filter string="Living Area" name="grp_living_area" context="{'group_by': 'living_area'}"/>

@@ -178,23 +178,18 @@ class EstateProperty(models.Model):
                     "Only properties in 'new' or 'canceled' state can be deleted."
                 )
 
-    _sql_constraints = [
-        (
-            "expected_price_positive",
-            "CHECK(expected_price > 0)",
-            "The expected price must be positive.",
-        ),
-        (
-            "selling_price_positive",
-            "CHECK(selling_price >= 0)",
-            "The selling price must be non-negative.",
-        ),
-        (
-            "selling_price_less_equal_expected",
-            "CHECK(selling_price <= expected_price)",
-            "The selling price cannot exceed the expected price.",
-        ),
-    ]
+    _expected_price_positive = models.Constraint(
+        'CHECK(expected_price > 0)',
+        "The expected price must be positive.",
+    )
+    _selling_price_positive = models.Constraint(
+        'CHECK(selling_price >= 0)',
+        "The selling price must be non-negative.",
+    )
+    _selling_price_less_equal_expected = models.Constraint(
+        'CHECK(selling_price <= expected_price)',
+        "The selling price cannot exceed the expected price.",
+    )
 
 
 class EstatePropertyOffer(models.Model):

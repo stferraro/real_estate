@@ -1,6 +1,6 @@
 {
     'name': 'Real Estate in Odoo',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'summary': 'A Module For Real Estate administration',
     'author': 'Gerardo Alí Ferraro Schelijasch',
     'license': 'LGPL-3',

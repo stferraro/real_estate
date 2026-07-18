@@ -34,9 +34,10 @@ class EstatePropertyType(models.Model):
         help='Number of offers for properties of this type'
     )
 
-    _sql_constraints = [
-        ('name_unique', 'unique(name)', 'The property type name must be unique.')
-    ]
+    _name_unique = models.Constraint(
+        'unique(name)',
+        "The property type name must be unique.",
+    )
 
     def _compute_offer_count(self):
         for rec in self:
